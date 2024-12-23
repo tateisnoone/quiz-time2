@@ -1,12 +1,8 @@
-import './App.css'
+import "./App.css";
+import Questions from "./pages/question";
 
 function App() {
-
-  return (
-    <>
-      main
-    </>
-  )
+  return <Questions />;
 }
 
-export default App
+export default App;
