@@ -6,7 +6,9 @@
 
 @layer base {
   :root {
-
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
+}
+body {
+  background-color: #ede8e3;
 }
