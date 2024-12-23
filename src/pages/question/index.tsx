@@ -11,11 +11,10 @@ const [index,setIndex] = useState(0);
 const question = quiz.questions[index];
 const quizName = quiz.name;
 
+console.log(question)
+
 const handleContinue = () => {
-
   setIndex(index + 1);
-
-  
 };
 
 if(index==3){

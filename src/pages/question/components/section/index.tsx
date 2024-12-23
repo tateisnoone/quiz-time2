@@ -13,6 +13,7 @@ const Section: React.FC = ({question}) => {
         <h2>{question.name}</h2>
       </div>
 
+
       <RadioGroup
         defaultValue="default"
         className="space-y-4 p-4 bg-neutral-100 rounded-lg"
@@ -20,34 +21,34 @@ const Section: React.FC = ({question}) => {
         
         <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow">
           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-200 text-black font-bold">
-            {question.variants[0].id}
+            A
           </div>
           <div className="flex-grow">
             <RadioGroupItem value="optionA" id="r1" className="hidden" />
             <Label htmlFor="r1" className="cursor-pointer">
-              ობიექტს
+              {question.variants[0].name}
             </Label>
           </div>
         </div>
         <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow">
           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-200 text-black font-bold">
-          {question.variants[1].id}
+            B
           </div>
           <div className="flex-grow">
             <RadioGroupItem value="optionB" id="r2" className="hidden" />
             <Label htmlFor="r2" className="cursor-pointer">
-              მასივს
+            {question.variants[1].name}
             </Label>
           </div>
         </div>
         <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow">
           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-200 text-black font-bold">
-          {question.variants[2].id}
+            C
           </div>
           <div className="flex-grow">
             <RadioGroupItem value="optionC" id="r3" className="hidden" />
             <Label htmlFor="r3" className="cursor-pointer">
-              სტრინგს
+            {question.variants[2].name}
             </Label>
           </div>
         </div>
