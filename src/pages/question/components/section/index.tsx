@@ -2,46 +2,57 @@ import React from "react";
 import { RadioGroup, RadioGroupItem } from "@radix-ui/react-radio-group";
 import { Label } from "@radix-ui/react-label";
 
-const Section: React.FC = () => {
+
+
+const Section: React.FC = ({question}) => {
+
+
   return (
-    <RadioGroup
-      defaultValue="default"
-      className="space-y-4 p-4 bg-neutral-100 rounded-lg"
-    >
-      <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow">
-        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-200 text-black font-bold">
-          A
-        </div>
-        <div className="flex-grow">
-          <RadioGroupItem value="optionA" id="r1" className="hidden" />
-          <Label htmlFor="r1" className="cursor-pointer">
-            ობიექტს
-          </Label>
-        </div>
+    <div className="flex flex-col gap-10">
+      <div className="flex items-center   justify-center">
+        <h2>{question.name}</h2>
       </div>
-      <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow">
-        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-200 text-black font-bold">
-          B
+
+      <RadioGroup
+        defaultValue="default"
+        className="space-y-4 p-4 bg-neutral-100 rounded-lg"
+      >
+        
+        <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-200 text-black font-bold">
+            {question.variants[0].id}
+          </div>
+          <div className="flex-grow">
+            <RadioGroupItem value="optionA" id="r1" className="hidden" />
+            <Label htmlFor="r1" className="cursor-pointer">
+              ობიექტს
+            </Label>
+          </div>
         </div>
-        <div className="flex-grow">
-          <RadioGroupItem value="optionB" id="r2" className="hidden" />
-          <Label htmlFor="r2" className="cursor-pointer">
-            მასივს
-          </Label>
+        <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-200 text-black font-bold">
+          {question.variants[1].id}
+          </div>
+          <div className="flex-grow">
+            <RadioGroupItem value="optionB" id="r2" className="hidden" />
+            <Label htmlFor="r2" className="cursor-pointer">
+              მასივს
+            </Label>
+          </div>
         </div>
-      </div>
-      <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow">
-        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-200 text-black font-bold">
-          C
+        <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-200 text-black font-bold">
+          {question.variants[2].id}
+          </div>
+          <div className="flex-grow">
+            <RadioGroupItem value="optionC" id="r3" className="hidden" />
+            <Label htmlFor="r3" className="cursor-pointer">
+              სტრინგს
+            </Label>
+          </div>
         </div>
-        <div className="flex-grow">
-          <RadioGroupItem value="optionC" id="r3" className="hidden" />
-          <Label htmlFor="r3" className="cursor-pointer">
-            სტრინგს
-          </Label>
-        </div>
-      </div>
-    </RadioGroup>
+      </RadioGroup>
+    </div>
   );
 };
 

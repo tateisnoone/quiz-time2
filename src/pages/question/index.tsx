@@ -1,26 +1,40 @@
-import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../../components/ui/card";
+import React, { useState } from "react";
+import { Card, CardContent, CardHeader } from "../../components/ui/card";
 import Header from "./components/header";
 import Section from "./components/section";
-
+import ContinueButton from "./components/continue";
+import { quiz } from "../../data/quiz";
 const Questions: React.FC = () => {
+const [index,setIndex] = useState(0);
+
+const question = quiz.questions[index];
+const quizName = quiz.name;
+
+const handleContinue = () => {
+
+  setIndex(index + 1);
+
+  
+};
+
   return (
-    <Card className="w-[50%]  m-auto">
-      <CardHeader>
-        <Header />
-      </CardHeader>
-      <CardContent>
-        <Section />
-      </CardContent>
-    </Card>
+    <div className="h-screen bg-slate-200 flex items-center justify-center">
+      <Card className="w-[50%] max-w-lg shadow-md">
+        <CardHeader>
+          <Header quizName={quizName} />
+        </CardHeader>
+        <CardContent>
+          <Section question={question} />
+        </CardContent>
+        <CardContent>
+          <ContinueButton  onContinue={handleContinue}/>
+        </CardContent>
+      </Card>
+    </div>
   );
+
+
+
 };
 
 export default Questions;
