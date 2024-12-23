@@ -4,6 +4,7 @@ import Header from "./components/header";
 import Section from "./components/section";
 import ContinueButton from "./components/continue";
 import { quiz } from "../../data/quiz";
+import SuccessPage from "../success/success";
 const Questions: React.FC = () => {
 const [index,setIndex] = useState(0);
 
@@ -17,6 +18,9 @@ const handleContinue = () => {
   
 };
 
+if(index==3){
+  return <SuccessPage/>
+}else{
   return (
     <div className="h-screen bg-slate-200 flex items-center justify-center">
       <Card className="w-[50%] max-w-lg shadow-md">
@@ -33,7 +37,7 @@ const handleContinue = () => {
     </div>
   );
 
-
+}
 
 };
 
