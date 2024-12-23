@@ -11,7 +11,6 @@ const [index,setIndex] = useState(0);
 const question = quiz.questions[index];
 const quizName = quiz.name;
 
-console.log(question)
 
 const handleContinue = () => {
   setIndex(index + 1);
@@ -21,8 +20,8 @@ if(index==3){
   return <SuccessPage/>
 }else{
   return (
-    <div className="h-screen bg-slate-200 flex items-center justify-center">
-      <Card className="w-[50%] max-w-lg shadow-md">
+    <div className="h-screen bg-[#f5f5f5] flex items-center justify-center">
+      <Card className="w-[50%] max-w-lg shadow-md bg-[#ede8e3]">
         <CardHeader>
           <Header quizName={quizName} />
         </CardHeader>
